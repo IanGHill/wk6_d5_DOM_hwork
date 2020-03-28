@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+    <title>Music Collection app</title>
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <form id="new-media-form">
+        <div id="form-wrapper">
+            <div id="format">
+                <label for="select_format" class="form-inputs">Category:</label>
+                <select name="select_format" id="select_format" required>
+                    <option value="" disabled selected></option>
+                    <option value="CD">CD</option>
+                    <option value="Vinyl 7-inch">Vinyl 7-inch</option>
+                    <option value="Vinyl 12-inch">Vinyl 12-inch</option>
+                </select>
+            </div>
+
+            <div id="category">
+                <label for="select_category" class="form-inputs">Category:</label>
+                <select name="select_category" id="select_category" required>
+                    <option value="" disabled selected></option>
+                    <option value="Single">Single</option>
+                    <option value="EP">EP</option>
+                    <option value="Album">Album</option>
+                </select>
+            </div>
+
+            <div id="artist">
+                <label for="input_artist" class="form-inputs">Artist:</label>
+                <input type ="text" name="input_artist" id="input_artist" required>
+            </div>
+
+            <div id="title">
+                <label for="input_title" class="form-inputs">Title:</label>
+                <input type ="text" name="input_title" id="input_title" required>
+            </div>
+
+            <input type="submit" value="save into collection"/>
+        </div>
+    </form>
+    <br>
+    <hr>
+    <br>
+    <table>
+        <thead>
+            
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>
