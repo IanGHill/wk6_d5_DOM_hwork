@@ -7,21 +7,22 @@
     <script src="js/app.js"></script>
 </head>
 <body>
+    <h2>Record Collector</h2>
     <form id="new-media-form">
         <div id="form-wrapper">
             <div id="format">
-                <label for="select_format" class="form-inputs">Category:</label>
-                <select name="select_format" id="select_format" required>
+                <label for="select_format" class="form-inputs">Format:</label>
+                <select name="select_format" id="select-format" required>
                     <option value="" disabled selected></option>
                     <option value="CD">CD</option>
-                    <option value="Vinyl 7-inch">Vinyl 7-inch</option>
-                    <option value="Vinyl 12-inch">Vinyl 12-inch</option>
+                    <option value="Vinyl-7-inch">Vinyl 7-inch</option>
+                    <option value="Vinyl-12-inch">Vinyl 12-inch</option>
                 </select>
             </div>
 
             <div id="category">
                 <label for="select_category" class="form-inputs">Category:</label>
-                <select name="select_category" id="select_category" required>
+                <select name="select_category" id="select-category" required>
                     <option value="" disabled selected></option>
                     <option value="Single">Single</option>
                     <option value="EP">EP</option>
@@ -31,25 +32,54 @@
 
             <div id="artist">
                 <label for="input_artist" class="form-inputs">Artist:</label>
-                <input type ="text" name="input_artist" id="input_artist" required>
+                <input type ="text" name="input_artist" id="input-artist" required>
             </div>
 
             <div id="title">
                 <label for="input_title" class="form-inputs">Title:</label>
-                <input type ="text" name="input_title" id="input_title" required>
+                <input type ="text" name="input_title" id="input-title" required>
             </div>
 
-            <input type="submit" value="save into collection"/>
+            <input type="submit" value="SAVE TO COLLECTION" class="button"/>
         </div>
     </form>
     <br>
+    <form id="filter-by-format">
+        <h4>Filter by Format:</h4>
+        <div id="form-wrapper2">
+            <div>
+                <input type="radio" id="filter-all" name="format_filter" value="filter-all" checked="checked">
+                <label for="format_all">All</label><br>
+            </div>
+            <div>
+                <input type="radio" id="filter-CD" name="format_filter" value="filter-CD">
+                <label for="format_CD">CDs</label><br>
+            </div>            
+            <div>
+                <input type="radio" id="filter-vinyl7" name="format_filter" value="filter-vinyl7">
+                <label for="format_vinyl7">7-Inch Vinyl</label><br>
+            </div>
+            <div>
+                <input type="radio" id="filter-vinyl12" name="format_filter" value="filter-vinyl12">
+                <label for="format_vinyl12">12-Inch Vinyl</label><br>
+            </div>
+        </div>
+
+    </form>
+
+
     <hr>
     <br>
-    <table>
-        <thead>
-            
+    <table id="music-collection-table" >
+        <thead id="music-collection-headings">
+            <tr>
+                <th>Format</th>
+                <th>Category</th>
+                <th>Artist</th>
+                <th>Title</th>
+            </tr>
         </thead>
-        <tbody>
+        <tbody id="music-collection-items">
 
         </tbody>
     </table>
