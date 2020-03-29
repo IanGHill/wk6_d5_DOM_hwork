@@ -2,17 +2,36 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM has loaded");
 
     const newMediaForm = document.querySelector('#new-media-form');
-    const musicCollectionTable = document.querySelector('#music-collection-table');
-    createSeeds(musicCollectionTable);
-
-    newMediaForm.addEventListener('submit', handleFormSubmit);
+    newMediaForm.addEventListener('submit', handleNewFormSubmit);
 
     const radioFilter = document.querySelector('#filter-by-format');
-    
     radioFilter.addEventListener('click', handleRadioFilter);
+
+    const deleteMediaForm = document.querySelector('#delete-media-form');
+    deleteMediaForm.addEventListener('submit', handleDeleteFormSubmit);
+
+    const musicCollectionTable = document.querySelector('#music-collection-table');
+    createSeeds(musicCollectionTable);
 })
 
-const handleFormSubmit = function(event){
+const handleDeleteFormSubmit = function(event){
+    event.preventDefault();
+    
+    const vinyl12InchList = document.getElementsByClassName("Vinyl-12-inch");
+    const vinyl7InchList = document.getElementsByClassName("Vinyl-7-inch");
+    const cdList = document.getElementsByClassName("CD");
+    const vinyl12Inch = [...vinyl12InchList];
+    const vinyl7Inch = [...vinyl7InchList];
+    const cd = [...cdList];
+    
+    vinyl12Inch.forEach( element => {element.remove();});
+    vinyl7Inch.forEach( element => {element.remove();});
+    cd.forEach( element => {element.remove();});
+
+    event.target.reset();
+}
+
+const handleNewFormSubmit = function(event){
     event.preventDefault();
 
     const newMediaRow = createMediaRow(this.select_format.value, this.select_category.value, this.input_artist.value, this.input_title.value);
@@ -24,7 +43,7 @@ const handleFormSubmit = function(event){
 
 const handleRadioFilter = function(event){
     const filterOption = event.target.value; 
-
+        
         const vinyl12InchList = document.getElementsByClassName("Vinyl-12-inch");
         const vinyl7InchList = document.getElementsByClassName("Vinyl-7-inch");
         const cdList = document.getElementsByClassName("CD");
